@@ -48,12 +48,7 @@ Reaction _$ReactionFromJson(Map json) => Reaction(
     );
 
 Map<String, dynamic> _$ReactionToJson(Reaction instance) {
-  final val = <String, dynamic>{
-    'id': readonly(instance.id),
-    'kind': instance.kind,
-    'activity_id': instance.activityId,
-    'user_id': instance.userId,
-  };
+  final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
     if (value != null) {
@@ -61,16 +56,20 @@ Map<String, dynamic> _$ReactionToJson(Reaction instance) {
     }
   }
 
+  writeNotNull('id', readonly(instance.id));
+  val['kind'] = instance.kind;
+  val['activity_id'] = instance.activityId;
+  val['user_id'] = instance.userId;
   writeNotNull('parent', instance.parent);
   writeNotNull(
       'created_at', const DateTimeUTCConverter().toJson(instance.createdAt));
-  val['updated_at'] = readonly(instance.updatedAt);
+  writeNotNull('updated_at', readonly(instance.updatedAt));
   writeNotNull('target_feeds', FeedId.toIds(instance.targetFeeds));
   writeNotNull('user', instance.user?.toJson());
   writeNotNull('target_feeds_extra_data', instance.targetFeedsExtraData);
   writeNotNull('data', instance.data);
-  val['latest_children'] = readonly(instance.latestChildren);
-  val['own_children'] = readonly(instance.ownChildren);
-  val['children_counts'] = readonly(instance.childrenCounts);
+  writeNotNull('latest_children', readonly(instance.latestChildren));
+  writeNotNull('own_children', readonly(instance.ownChildren));
+  writeNotNull('children_counts', readonly(instance.childrenCounts));
   return val;
 }

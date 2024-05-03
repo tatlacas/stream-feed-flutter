@@ -11,7 +11,9 @@ ErrorResponse _$ErrorResponseFromJson(Map json) => ErrorResponse(
       message: json['message'] as String?,
       code: (json['code'] as num?)?.toInt(),
       statusCode: (json['status_code'] as num?)?.toInt(),
+      detail: json['detail'] as String?,
       moreInfo: json['more_info'] as String?,
+      exception: json['exception'] as String?,
     );
 
 Map<String, dynamic> _$ErrorResponseToJson(ErrorResponse instance) =>
@@ -19,6 +21,8 @@ Map<String, dynamic> _$ErrorResponseToJson(ErrorResponse instance) =>
       'duration': instance.duration,
       'code': instance.code,
       'message': instance.message,
+      'detail': instance.detail,
+      'exception': instance.exception,
       'status_code': instance.statusCode,
       'more_info': instance.moreInfo,
     };
