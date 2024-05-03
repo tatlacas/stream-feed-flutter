@@ -64,8 +64,9 @@ void main() {
     group('files', () {
       test('cancel', () async {
         when(() => mockFiles.upload(audioAttachment,
-            cancelToken: mockCancelToken,
-            onSendProgress: any(named: 'onSendProgress'))).thenThrow(DioError(
+                cancelToken: mockCancelToken,
+                onSendProgress: any(named: 'onSendProgress')))
+            .thenThrow(DioException(
           requestOptions: RequestOptions(),
           type: DioErrorType.cancel,
         ));
@@ -205,8 +206,9 @@ void main() {
     group('images', () {
       test('cancel', () async {
         when(() => mockImages.upload(attachment,
-            cancelToken: mockCancelToken,
-            onSendProgress: any(named: 'onSendProgress'))).thenThrow(DioError(
+                cancelToken: mockCancelToken,
+                onSendProgress: any(named: 'onSendProgress')))
+            .thenThrow(DioException(
           requestOptions: RequestOptions(),
           type: DioErrorType.cancel,
         ));
