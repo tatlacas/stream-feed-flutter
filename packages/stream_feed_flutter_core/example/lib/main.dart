@@ -463,7 +463,7 @@ class ListActivityItem extends StatelessWidget {
             const SizedBox(width: 8),
             Text(
               actor.handle,
-              style: Theme.of(context).textTheme.caption,
+              style: Theme.of(context).textTheme.bodySmall,
             ),
           ],
         ),
@@ -508,7 +508,7 @@ class ListActivityItem extends StatelessWidget {
                   if (reactionCounts?['like'] != null)
                     Text(
                       '${reactionCounts?['like']}',
-                      style: Theme.of(context).textTheme.caption,
+                      style: Theme.of(context).textTheme.bodySmall,
                     )
                 ],
               ),
@@ -523,7 +523,7 @@ class ListActivityItem extends StatelessWidget {
                   if (reactionCounts?['comment'] != null)
                     Text(
                       '${reactionCounts?['comment']}',
-                      style: Theme.of(context).textTheme.caption,
+                      style: Theme.of(context).textTheme.bodySmall,
                     )
                 ],
               )
@@ -649,7 +649,7 @@ class _ComposeActivityPageState extends State<ComposeActivityPage> {
                   ),
                   Text(
                     'Add image',
-                    style: Theme.of(context).textTheme.caption,
+                    style: Theme.of(context).textTheme.bodySmall,
                   ),
                 ],
               ),

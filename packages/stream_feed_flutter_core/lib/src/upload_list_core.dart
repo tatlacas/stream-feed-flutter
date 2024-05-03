@@ -137,7 +137,7 @@ class UploadListCore extends StatelessWidget {
         final rawMap = snapshot.data!;
         final uploads = List<FileUploadState>.from(
           rawMap.entries.map(
-            (entry) => FileUploadState.fromEntry(entry),
+            FileUploadState.fromEntry,
           ),
         );
 
