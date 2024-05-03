@@ -46,7 +46,7 @@ const defaultConnectionTimeout = 60;
 const defaultConnectionInterval = 0;
 const bayeuxVersion = '1.0';
 
-class FayeClient with Extensible, TimeoutHelper, EquatableMixin {
+class FayeClient with ExtensibleMixin, TimeoutHelperMixin, EquatableMixin {
   FayeClient(
     this.baseUrl, {
     this.protocols,

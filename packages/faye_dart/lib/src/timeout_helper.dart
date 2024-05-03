@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:uuid/uuid.dart';
 
-class TimeoutHelper {
+mixin TimeoutHelperMixin {
   final _uuid = const Uuid();
   late final _timers = <String, Timer>{};
 
@@ -26,3 +26,5 @@ class TimeoutHelper {
 
   bool get hasTimeouts => _timers.isNotEmpty;
 }
+
+class TimeoutHelper with TimeoutHelperMixin {}

@@ -144,7 +144,7 @@ class EventEmitter<T> {
   }
 }
 
-class _ListenerEntry<T> extends LinkedListEntry<_ListenerEntry<T>> {
+final class _ListenerEntry<T> extends LinkedListEntry<_ListenerEntry<T>> {
   _ListenerEntry(this.listener, {this.limit});
 
   int? limit;

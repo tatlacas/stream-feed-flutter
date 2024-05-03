@@ -4,7 +4,7 @@ import 'package:faye_dart/src/message.dart';
 
 typedef MessageHandler = Message Function(Message message);
 
-class Extensible {
+mixin ExtensibleMixin {
   late final _extensions = Queue<Map<String, MessageHandler>>();
 
   void addExtension(Map<String, MessageHandler> extension) =>
@@ -37,3 +37,5 @@ class Extensible {
     pipe(message);
   }
 }
+
+class Extensible with ExtensibleMixin {}

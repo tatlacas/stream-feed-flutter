@@ -1,10 +1,11 @@
+import 'package:equatable/equatable.dart';
 import 'package:faye_dart/src/client.dart';
 import 'package:faye_dart/src/message.dart';
 
 typedef Callback = void Function(Map<String, dynamic>? data);
 typedef WithChannelCallback = void Function(String, Map<String, dynamic>?);
 
-class Subscription {
+class Subscription with EquatableMixin {
   Subscription(
     this._client,
     this._channel, {

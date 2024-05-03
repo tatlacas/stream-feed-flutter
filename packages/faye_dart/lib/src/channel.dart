@@ -6,7 +6,7 @@ import 'package:faye_dart/src/subscription.dart';
 
 const eventMessage = 'message';
 
-class Channel with EquatableMixin, EventEmitter<Message> {
+class Channel extends EventEmitter<Message> with EquatableMixin {
   Channel(this.name);
 
   final String name;
