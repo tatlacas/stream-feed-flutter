@@ -51,7 +51,7 @@ class UsersAPI {
     final result = await _client.put(
       Routes.buildUsersUrl('$id/'),
       headers: {'Authorization': '$token'},
-      data: updatedUser,
+      data: updatedUser.toJson(),
     );
     return User.fromJson(result.data);
   }
