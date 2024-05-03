@@ -8,7 +8,7 @@ part of 'following.dart';
 
 Following _$FollowingFromJson(Map json) => Following(
       feed: Following._fromId(json['feed'] as String),
-      count: json['count'] as int?,
+      count: (json['count'] as num?)?.toInt(),
       slugs:
           (json['slugs'] as List<dynamic>?)?.map((e) => e as String).toList(),
     );

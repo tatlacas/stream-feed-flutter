@@ -8,8 +8,8 @@ part of 'notification_feed_meta.dart';
 
 NotificationFeedMeta _$NotificationFeedMetaFromJson(Map json) =>
     NotificationFeedMeta(
-      unreadCount: json['unread'] as int,
-      unseenCount: json['unseen'] as int,
+      unreadCount: (json['unread'] as num).toInt(),
+      unseenCount: (json['unseen'] as num).toInt(),
     );
 
 Map<String, dynamic> _$NotificationFeedMetaToJson(

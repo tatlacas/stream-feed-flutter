@@ -9,8 +9,8 @@ part of 'responses.dart';
 ErrorResponse _$ErrorResponseFromJson(Map json) => ErrorResponse(
       duration: json['duration'] as String?,
       message: json['message'] as String?,
-      code: json['code'] as int?,
-      statusCode: json['status_code'] as int?,
+      code: (json['code'] as num?)?.toInt(),
+      statusCode: (json['status_code'] as num?)?.toInt(),
       moreInfo: json['more_info'] as String?,
     );
 

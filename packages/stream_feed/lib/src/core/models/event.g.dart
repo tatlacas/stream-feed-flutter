@@ -36,7 +36,7 @@ Event _$EventFromJson(Map json) => Event(
           .toList(),
       feedId: FeedId.fromId(json['feed_id'] as String?),
       location: json['location'] as String?,
-      position: json['position'] as int?,
+      position: (json['position'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$EventToJson(Event instance) {
@@ -61,14 +61,14 @@ Engagement _$EngagementFromJson(Map json) => Engagement(
       content:
           Content.fromJson(Map<String, dynamic>.from(json['content'] as Map)),
       label: json['label'] as String,
-      score: json['score'] as int?,
-      boost: json['boost'] as int?,
+      score: (json['score'] as num?)?.toInt(),
+      boost: (json['boost'] as num?)?.toInt(),
       features: (json['features'] as List<dynamic>?)
           ?.map((e) => Feature.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       feedId: FeedId.fromId(json['feed_id'] as String?),
       location: json['location'] as String?,
-      position: json['position'] as int?,
+      position: (json['position'] as num?)?.toInt(),
       trackedAt: json['tracked_at'] as String?,
       userData: json['user_data'] == null
           ? null
@@ -108,7 +108,7 @@ Impression _$ImpressionFromJson(Map json) => Impression(
           .toList(),
       feedId: FeedId.fromId(json['feed_id'] as String?),
       location: json['location'] as String?,
-      position: json['position'] as int?,
+      position: (json['position'] as num?)?.toInt(),
       trackedAt: json['tracked_at'] as String?,
       userData: json['user_data'] == null
           ? null

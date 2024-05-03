@@ -15,25 +15,15 @@ User _$UserFromJson(Map json) => User(
           const DateTimeUTCConverter().fromJson(json['created_at'] as String?),
       updatedAt:
           const DateTimeUTCConverter().fromJson(json['updated_at'] as String?),
-      followersCount: json['followers_count'] as int?,
-      followingCount: json['following_count'] as int?,
+      followersCount: (json['followers_count'] as num?)?.toInt(),
+      followingCount: (json['following_count'] as num?)?.toInt(),
     );
 
-Map<String, dynamic> _$UserToJson(User instance) {
-  final val = <String, dynamic>{
-    'id': instance.id,
-    'data': instance.data,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('created_at', readonly(instance.createdAt));
-  writeNotNull('updated_at', readonly(instance.updatedAt));
-  writeNotNull('followers_count', readonly(instance.followersCount));
-  writeNotNull('following_count', readonly(instance.followingCount));
-  return val;
-}
+Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
+      'id': instance.id,
+      'data': instance.data,
+      'created_at': readonly(instance.createdAt),
+      'updated_at': readonly(instance.updatedAt),
+      'followers_count': readonly(instance.followersCount),
+      'following_count': readonly(instance.followingCount),
+    };

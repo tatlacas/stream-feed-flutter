@@ -15,7 +15,7 @@ Group<T> _$GroupFromJson<T>(
       group: json['group'] as String?,
       activities:
           (json['activities'] as List<dynamic>?)?.map(fromJsonT).toList(),
-      actorCount: json['actor_count'] as int?,
+      actorCount: (json['actor_count'] as num?)?.toInt(),
       createdAt:
           const DateTimeUTCConverter().fromJson(json['created_at'] as String?),
       updatedAt:
@@ -44,7 +44,7 @@ NotificationGroup<T> _$NotificationGroupFromJson<T>(
       group: json['group'] as String?,
       activities:
           (json['activities'] as List<dynamic>?)?.map(fromJsonT).toList(),
-      actorCount: json['actor_count'] as int?,
+      actorCount: (json['actor_count'] as num?)?.toInt(),
       createdAt:
           const DateTimeUTCConverter().fromJson(json['created_at'] as String?),
       updatedAt:

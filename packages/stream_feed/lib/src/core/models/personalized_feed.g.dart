@@ -15,8 +15,8 @@ PersonalizedFeed<A, Ob, T, Or> _$PersonalizedFeedFromJson<A, Ob, T, Or>(
 ) =>
     PersonalizedFeed<A, Ob, T, Or>(
       version: json['version'] as String,
-      offset: json['offset'] as int,
-      limit: json['limit'] as int,
+      offset: (json['offset'] as num).toInt(),
+      limit: (json['limit'] as num).toInt(),
       next: json['next'] as String?,
       results: (json['results'] as List<dynamic>?)
           ?.map((e) => GenericEnrichedActivity<A, Ob, T, Or>.fromJson(

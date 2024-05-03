@@ -24,8 +24,8 @@ class StreamHttpClient {
   })  : options = options ?? const StreamHttpClientOptions(),
         httpClient = dio ?? Dio() {
     httpClient
-      ..options.receiveTimeout = this.options.receiveTimeout.inMilliseconds
-      ..options.connectTimeout = this.options.connectTimeout.inMilliseconds
+      ..options.receiveTimeout = options?.receiveTimeout
+      ..options.connectTimeout = this.options.connectTimeout
       ..options.queryParameters = {
         'api_key': apiKey,
         'location': this.options.group,
@@ -73,7 +73,7 @@ class StreamHttpClient {
   StreamFeedsNetworkError _parseError(DioError err) {
     StreamFeedsNetworkError error;
     // locally thrown dio error
-    if (err is StreamFeedsDioError) {
+    if (err is StreamFeedsDioException) {
       error = err.error;
     } else {
       // real network request dio error

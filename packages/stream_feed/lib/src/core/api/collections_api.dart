@@ -90,7 +90,7 @@ class CollectionsAPI {
       },
     );
     final data = (result.data!['response']['data'] as List)
-        .map((e) => CollectionEntry.fromJson(e))
+        .map((e) => CollectionEntry.fromJson(e as Map<String, dynamic>))
         .toList(growable: false);
     return data;
   }
@@ -130,7 +130,7 @@ class CollectionsAPI {
     );
 
     final data = (response.data!['data'][collection] as List)
-        .map((e) => CollectionEntry.fromJson(e))
+        .map((e) => CollectionEntry.fromJson(e as Map<String, dynamic>))
         .toList(growable: false);
     return data;
   }

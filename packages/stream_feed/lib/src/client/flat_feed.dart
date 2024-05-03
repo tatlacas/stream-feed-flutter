@@ -77,7 +77,7 @@ class FlatFeed extends Feed {
         TokenHelper.buildFeedToken(secret!, TokenAction.read, feedId);
     final result = await feed.getActivities(token, feedId, options);
     final data = (result.data!['results'] as List)
-        .map((e) => Activity.fromJson(e))
+        .map<Activity>((e) => Activity.fromJson(e as Map<String, dynamic>))
         .toList(growable: false);
     return data;
   }
@@ -126,7 +126,8 @@ class FlatFeed extends Feed {
         TokenHelper.buildFeedToken(secret!, TokenAction.read, feedId);
     final result = await feed.getEnrichedActivities(token, feedId, options);
     final data = (result.data['results'] as List)
-        .map((e) => GenericEnrichedActivity<A, Ob, T, Or>.fromJson(e))
+        .map((e) => GenericEnrichedActivity<A, Ob, T, Or>.fromJson(
+            e as Map<String, dynamic>))
         .toList(growable: false);
     return data;
   }
