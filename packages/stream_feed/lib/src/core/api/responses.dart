@@ -11,13 +11,15 @@ class _BaseResponse {
 @JsonSerializable()
 class ErrorResponse extends _BaseResponse {
   /// Create a new instance from a json
-  const ErrorResponse(
-      {String? duration,
-      this.message,
-      this.code,
-      this.statusCode,
-      this.moreInfo})
-      : super(duration);
+  const ErrorResponse({
+    String? duration,
+    this.message,
+    this.code,
+    this.statusCode,
+    this.detail,
+    this.moreInfo,
+    this.exception,
+  }) : super(duration);
 
   /// Create a new instance from a json
   factory ErrorResponse.fromJson(Map<String, dynamic> json) =>
@@ -28,6 +30,8 @@ class ErrorResponse extends _BaseResponse {
 
   /// The message associated to the error code
   final String? message;
+  final String? detail;
+  final String? exception;
 
   /// The backend error code
   final int? statusCode;
@@ -42,5 +46,7 @@ class ErrorResponse extends _BaseResponse {
   String toString() => 'ErrorResponse(code: $code, '
       'message: $message, '
       'statusCode: $statusCode, '
+      'exception: $exception, '
+      'detail: $detail, '
       'moreInfo: $moreInfo)';
 }
