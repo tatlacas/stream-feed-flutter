@@ -42,7 +42,11 @@ class StreamFeedsNetworkError extends StreamFeedsError {
   factory StreamFeedsNetworkError.fromDioError(DioException error) {
     final response = error.response;
     ErrorResponse? errorResponse;
-    final data = json.decode(response?.data);
+    final data = response?.data is Map
+        ? response?.data
+        : (response?.data is String
+            ? json.decode(response?.data)
+            : {'message': response?.data});
     if (data != null) {
       errorResponse = ErrorResponse.fromJson(data);
     }
