@@ -17,7 +17,7 @@ dependencies:
   rxdart: ^0.27.1
   stream_feed:
     git:
-      url: git@github.com:tatlacas/stream-feed-flutter.git
+      url: https://github.com/tatlacas/stream-feed-flutter.git
       path: packages/stream_feed
       ref: naborly/main
 dev_dependencies:
