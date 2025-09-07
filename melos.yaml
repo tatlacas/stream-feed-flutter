@@ -4,6 +4,8 @@ packages:
   - packages/**
 
 scripts:
+  p:
+   run: flutter pub upgrade --major-versions
   format:
     run: flutter format --set-exit-if-changed .
     description: |

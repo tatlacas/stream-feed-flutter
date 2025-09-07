@@ -32,3 +32,12 @@ coverage.lcov
 coverage/
 packages/stream_feed_flutter/example/.flutter-plugins-dependencies
 packages/stream_feed_flutter/example/.flutter-plugins-dependencies
+
+# FVM Version Cache
+.fvm/
+packages/stream_feed/pubspec_overrides.yaml
+packages/stream_feed/example/pubspec_overrides.yaml
+packages/stream_feed_flutter/example/pubspec_overrides.yaml
+packages/stream_feed_flutter/pubspec_overrides.yaml
+packages/stream_feed_flutter_core/example/pubspec_overrides.yaml
+packages/stream_feed_flutter_core/pubspec_overrides.yaml
