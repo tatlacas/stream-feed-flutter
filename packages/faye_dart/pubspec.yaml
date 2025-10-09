@@ -6,7 +6,9 @@ repository: https://github.com/GetStream/stream-feed-flutter/blob/master/package
 issue_tracker: https://github.com/GetStream/stream-feed-flutter/issues
 
 environment:
-  sdk: ">=3.2.0 <4.0.0"
+  sdk: ">=3.6.0 <4.0.0"
+
+resolution: workspace
 
 dependencies:
   equatable: ^2.0.0

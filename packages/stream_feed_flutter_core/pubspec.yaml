@@ -5,8 +5,10 @@ repository: https://github.com/GetStream/stream-feed-flutter
 issue_tracker: https://github.com/GetStream/stream-feed-flutter/issues
 homepage: https://getstream.io/
 environment:
-  sdk: ">=3.2.0 <4.0.0"
+  sdk: ">=3.6.0 <4.0.0"
   flutter: ">=3.16.0"
+
+resolution: workspace
 
 dependencies:
   dio: ^5.7.0
